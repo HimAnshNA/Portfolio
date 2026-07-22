@@ -7,523 +7,68 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Himanshu Namdeo | Portfolio</title>
-
-    <!-- Tailwind -->
+    <title>Varahi Info Tech</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- GSAP -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"></script>
-
-    <!-- Lenis -->
-
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
-
-    <!-- Icons -->
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-    <!-- Google Font -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <style>
-        * {
-
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-
-        }
-
-        html {
-
-            scroll-behavior: smooth;
-
-        }
-
-        body {
-
-            background: #050816;
-
-            color: white;
-
-            overflow-x: hidden;
-
-        }
-
-        a {
-
-            text-decoration: none;
-
-            color: inherit;
-
-        }
-
-        ul {
-
-            list-style: none;
-
-        }
-
-        button {
-
-            cursor: pointer;
-
-        }
-
-        ::selection {
-
-            background: #22c55e;
-
-            color: white;
-
-        }
-
-        #mouseGlow {
-
-            position: fixed;
-
-            width: 450px;
-
-            height: 450px;
-
-            border-radius: 50%;
-
-            background: radial-gradient(circle,
-                    rgba(34, 197, 94, .18),
-                    transparent 70%);
-
-            pointer-events: none;
-
-            transform: translate(-50%, -50%);
-
-            z-index: -1;
-
-            filter: blur(60px);
-
-            transition:
-                transform .08s linear;
-
-        }
-
-
-
-
-
-        .scrollLine {
-
-            animation: scrollMove 2s infinite;
-
-        }
-
-        @keyframes scrollMove {
-
-            0% {
-
-                transform: translateY(-100%);
-
-            }
-
-            100% {
-
-                transform: translateY(200%);
-
-            }
-
-        }
-
-
-        .projectCard {
-
-            transition: .5s;
-
-            transform-style: preserve-3d;
-
-        }
-
-        .group:hover .projectCard {
-
-            transform:
-                perspective(1200px) rotateY(-8deg) rotateX(6deg) translateY(-10px) scale(1.03);
-
-        }
-
-
-
-
-        .skill {
-
-            padding: 14px 28px;
-
-            border-radius: 999px;
-
-            background: rgba(255, 255, 255, .05);
-
-            border: 1px solid rgba(255, 255, 255, .1);
-
-            backdrop-filter: blur(20px);
-
-            font-size: 14px;
-
-            transition: .4s;
-
-        }
-
-        .skill:hover {
-
-            background: #22c55e;
-
-            transform: scale(1.15);
-
-        }
-
-
-
-
-
-        .orbit {
-
-            position: absolute;
-
-            animation: spin 20s linear infinite;
-
-            transform-origin: center;
-
-        }
-
-
-
-
-
-        .orbit .skill {
-
-            transform: translateX(240px);
-
-        }
-
-
-
-
-
-        .orbit2 {
-
-            animation-duration: 25s;
-
-        }
-
-        .orbit3 {
-
-            animation-duration: 28s;
-
-        }
-
-        .orbit4 {
-
-            animation-duration: 30s;
-
-        }
-
-        .orbit5 {
-
-            animation-duration: 18s;
-
-        }
-
-        .orbit6 {
-
-            animation-duration: 24s;
-
-        }
-
-        .orbit7 {
-
-            animation-duration: 32s;
-
-        }
-
-        .orbit8 {
-
-            animation-duration: 16s;
-
-        }
-
-        .orbit9 {
-
-            animation-duration: 26s;
-
-        }
-
-        .orbit10 {
-
-            animation-duration: 35s;
-
-        }
-
-
-
-
-
-        @keyframes spin {
-
-            100% {
-
-                transform: rotate(360deg);
-
-            }
-
-        }
-
-
-
-
-        .transitionTitle {
-
-            background: linear-gradient(90deg,
-                    #ffffff,
-                    #9ca3af,
-                    #ffffff);
-
-            background-size: 300%;
-
-            /* Standard */
-            background-clip: text;
-
-            /* WebKit */
-            -webkit-background-clip: text;
-
-            color: transparent;
-            -webkit-text-fill-color: transparent;
-
-            animation: shine 8s linear infinite;
-
-        }
-
-        @keyframes shine {
-
-            0% {
-
-                background-position: 0%;
-
-            }
-
-            100% {
-
-                background-position: 300%;
-
-            }
-
-        }
-
-        .contactLink {
-
-            display: block;
-
-            font-size: 42px;
-
-            font-weight: 800;
-
-            color: rgba(255, 255, 255, .18);
-
-            transition: .45s;
-
-        }
-
-        .contactLink:hover {
-
-            color: white;
-
-            transform: translateX(18px);
-
-        }
-
-        .contactButton {
-
-            transition: .45s;
-
-        }
-
-        .contactButton:hover {
-
-            transform: translateY(-8px) scale(1.04);
-
-            box-shadow:
-
-                0 30px 80px rgba(255, 255, 255, .18);
-
-        }
-
-
-
-
-        .footerMail {
-
-            display: inline-block;
-
-            margin-top: 70px;
-
-            font-size: clamp(26px, 4vw, 52px);
-
-            font-weight: 800;
-
-            transition: .4s;
-
-        }
-
-        .footerMail:hover {
-
-            letter-spacing: 3px;
-
-            transform: translateY(-6px);
-
-            color: #22c55e;
-
-        }
-
-
-
-
-
-        .aliveDot {
-
-            position: absolute;
-
-            bottom: 40px;
-
-            right: 40px;
-
-            width: 12px;
-
-            height: 12px;
-
-            border-radius: 50%;
-
-            background: #22c55e;
-
-            box-shadow: 0 0 25px #22c55e;
-
-            animation: pulseDot 2s infinite;
-
-        }
-
-
-
-
-
-        @keyframes pulseDot {
-
-            0% {
-
-                transform: scale(.8);
-
-                opacity: .6;
-
-            }
-
-            50% {
-
-                transform: scale(1.3);
-
-                opacity: 1;
-
-            }
-
-            100% {
-
-                transform: scale(.8);
-
-                opacity: .6;
-
-            }
-
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
-<body>
+<body class="bg-white text-[#18181B] font-['Inter_Tight'] overflow-x-hidden">
 
-    <!-- BODY STARTS HERE -->
-    <!-- ========================= -->
-    <!-- BACKGROUND -->
-    <!-- ========================= -->
 
-    <div id="mouseGlow"></div>
+    <!-- ================= NAVBAR ================= -->
 
-    <div class="fixed inset-0 -z-50">
+    <header class="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
 
-        <!-- Animated Gradient -->
+        <nav
+            class="bg-[#18181B]/90 backdrop-blur-xl border border-white/10 rounded-full px-6 lg:px-8 py-4 flex items-center justify-between">
 
-        <div class="absolute inset-0
-        bg-[radial-gradient(circle_at_20%_20%,rgba(34,197,94,.15),transparent_30%),
-        radial-gradient(circle_at_80%_80%,rgba(59,130,246,.15),transparent_35%),
-        #050816]">
-        </div>
+            <a href="#" class="text-white text-xl font-semibold tracking-tight">
+                VIT
+            </a>
 
-        <!-- Grid -->
+            <!-- <ul class="hidden lg:flex items-center gap-8 text-white/70 text-[15px]">
 
-        <div class="absolute inset-0 opacity-[0.05]
-        bg-[linear-gradient(rgba(255,255,255,.08)_1px,transparent_1px),
-        linear-gradient(90deg,rgba(255,255,255,.08)_1px,transparent_1px)]
-        bg-[size:60px_60px]">
-        </div>
+            <li><a href="#" class="hover:text-white duration-300">Services</a></li>
 
-    </div>
+            <li><a href="#" class="hover:text-white duration-300">Solutions</a></li>
+
+            <li><a href="#" class="hover:text-white duration-300">About</a></li>
+
+            <li><a href="#" class="hover:text-white duration-300">Contact</a></li>
+
+        </ul> -->
 
 
 
-    <!-- ========================= -->
-    <!-- NAVBAR -->
-    <!-- ========================= -->
+            <ul class="hidden lg:flex items-center gap-8 text-white/70">
 
-    <header class="fixed top-0 left-0 w-full z-50">
+                <li><a href="#services">Services</a></li>
 
-        <nav class="max-w-7xl mx-auto
-flex justify-between items-center
-px-6 lg:px-10
-h-24">
+                <li><a href="#about">About</a></li>
 
-            <div class="text-2xl font-black tracking-[8px]">
+                <li><a href="#why-us">Why Us</a></li>
 
-                HN
-
-            </div>
-
-            <ul class="hidden lg:flex gap-10 text-sm uppercase tracking-[4px]">
-
-                <li><a href="#">Home</a></li>
-
-                <li><a href="#">Story</a></li>
-
-                <li><a href="#">Projects</a></li>
-
-                <li><a href="#">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
 
             </ul>
+            <a href="#contact"
+                class="hidden lg:block bg-[#FC5F2B] text-white rounded-full px-6 py-3 font-medium hover:scale-105 duration-300">
 
-            <button class="hidden lg:flex
-px-7 py-3
-rounded-full
-border border-green-500
-hover:bg-green-500
-duration-500">
-            <a href="https://himanshna.github.io/Resume/" target="_blank" rel="noopener noreferrer">
-                Resume
+                Let's Talk →
+
             </a>
-            </button>
 
-            <button id="menuBtn" class="text-3xl lg:hidden">
+            <button id="menuBtn" class="lg:hidden text-white">
 
                 ☰
 
@@ -531,1287 +76,63 @@ duration-500">
 
         </nav>
 
+        <div id="mobileMenu" class="hidden mt-3 rounded-3xl bg-[#18181B] p-6">
+
+            <a href="#services" class="block py-3 text-white">Services</a>
+
+            <a href="#about" class="block py-3 text-white">About</a>
+
+            <a href="#why-us" class="block py-3 text-white">Why Choose Us</a>
+
+            <a href="#contact" class="block py-3 text-white">Contact</a>
+
+        </div>
+
     </header>
 
-    <!-- hero -->
-    <!-- ========================= -->
-    <!-- HERO -->
-    <!-- ========================= -->
+    <!-- ================= HERO ================= -->
 
-    <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+    <section class="min-h-screen pt-40 flex items-center" id="home">
 
-        <!-- LEFT GLOW -->
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center">
 
-        <div class="absolute left-[-180px] top-1/2
-        w-[500px] h-[500px]
-        rounded-full
-        bg-green-500/10
-        blur-[150px]">
-        </div>
-
-        <!-- RIGHT GLOW -->
-
-        <div class="absolute right-[-180px] top-32
-        w-[450px] h-[450px]
-        rounded-full
-        bg-cyan-500/10
-        blur-[150px]">
-        </div>
-
-        <div class="relative
-        max-w-7xl
-        mx-auto
-        px-6
-        lg:px-10
-        grid
-        lg:grid-cols-2
-        gap-20
-        items-center
-        w-full">
-
-
-
-
-            <!-- ================= -->
             <!-- LEFT -->
-            <!-- ================= -->
 
             <div>
 
-                <p class="uppercase
-                tracking-[8px]
-                text-green-400
-                text-sm
-                mb-6">
+                <p class="uppercase tracking-[0.3em] text-xs text-gray-500 mb-6">
 
-                    Crafting
+                    VARAHI INFO TECH
 
                 </p>
 
-                <h1 class="font-black
-                leading-[0.9]
-                text-[60px]
-                sm:text-[80px]
-                md:text-[100px]
-                xl:text-[120px]">
+                <h1 class="text-[clamp(3rem,8vw,6rem)] leading-[0.9] tracking-[-0.06em] font-normal text-[#18181B]">
 
-                    Digital
-
-                    <br>
-
-                    <span class="text-transparent
-                    bg-clip-text
-                    bg-gradient-to-r
-                    from-green-400
-                    via-cyan-400
-                    to-blue-500">
-
-                        Experiences
-
-                    </span>
+                    Business Process Outsourcing &
+                    Enterprise Technology Solutions
 
                 </h1>
 
-                <p class="mt-10
-                text-gray-400
-                text-lg
-                leading-9
-                max-w-xl">
+                <p class="mt-8 text-lg leading-8 text-[#71717A] max-w-xl">
 
-                    I design and develop modern web experiences
-                    that combine clean engineering with premium
-                    user interfaces.
-
-                    Every interaction has purpose.
-
-                    Every animation tells a story.
+                    Helping businesses simplify operations through
+                    online & offline data entry, medical billing,
+                    enterprise software and intelligent management
+                    solutions.
 
                 </p>
 
-                <div class="flex
-                flex-wrap
-                gap-5
-                mt-12">
+                <div class="flex flex-wrap gap-4 mt-10">
 
-                    <button class="rounded-full
-                    bg-green-500
-                    px-8
-                    py-4
-                    font-semibold
-                    hover:scale-105
-                    duration-300">
+                    <a href="#" class="bg-[#FC5F2B] text-white rounded-full px-8 py-4 hover:scale-105 duration-300">
 
-                        Explore Work
+                        Get Started →
 
-                    </button>
+                    </a>
 
-                    <button class="rounded-full
-                    border
-                    border-white/20
-                    px-8
-                    py-4
-                    hover:bg-white/10
-                    duration-300">
+                    <a href="#" class="border border-gray-300 rounded-full px-8 py-4 hover:bg-gray-100 duration-300">
 
-                        Contact Me
-
-                    </button>
-
-                </div>
-
-            </div>
-
-
-
-
-
-
-            <!-- ================= -->
-            <!-- RIGHT -->
-            <!-- ================= -->
-
-            <div class="relative
-            flex
-            justify-center">
-
-                <!-- MAIN CARD -->
-
-                <div class="relative
-                w-full
-                max-w-md
-                rounded-[40px]
-                border
-                border-white/10
-                bg-white/5
-                backdrop-blur-xl
-                p-8">
-
-                    <div class="absolute
-                    -top-16
-                    -right-16
-                    w-40
-                    h-40
-                    rounded-full
-                    bg-green-500/20
-                    blur-[80px]">
-                    </div>
-
-                    <div class="relative
-                    z-10">
-
-                        <p class="uppercase
-                        tracking-[5px]
-                        text-xs
-                        text-green-400">
-
-                            Currently Building
-
-                        </p>
-
-                        <div class="space-y-4
-                        mt-8">
-
-                            <div class="rounded-2xl
-                            border
-                            border-white/10
-                            p-5">
-
-                                Digital Classroom
-
-                            </div>
-
-                            <div class="rounded-2xl
-                            border
-                            border-white/10
-                            p-5">
-
-                                Varahi Info Tech
-
-                            </div>
-
-                            <div class="rounded-2xl
-                            border
-                            border-white/10
-                            p-5">
-
-                                TransitHub Dashboard
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- ================= -->
-        <!-- SCROLL -->
-        <!-- ================= -->
-
-        <div class="absolute
-        bottom-10
-        left-1/2
-        -translate-x-1/2
-        flex
-        flex-col
-        items-center">
-
-            <span class="text-xs
-            tracking-[5px]
-            uppercase
-            text-gray-500">
-
-                Scroll
-
-            </span>
-
-            <div class="mt-4
-            w-[2px]
-            h-20
-            bg-white/10
-            overflow-hidden">
-
-                <div class="scrollLine
-                w-full
-                h-10
-                bg-green-400">
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- philosphy -->
-    <!-- ================================================= -->
-    <!-- PHILOSOPHY -->
-    <!-- ================================================= -->
-
-    <section id="philosophy" class="relative min-h-screen flex items-center overflow-hidden">
-
-        <!-- Giant Background Text -->
-
-        <h2 class="absolute
-        left-1/2
-        top-1/2
-        -translate-x-1/2
-        -translate-y-1/2
-        text-[22vw]
-        font-black
-        uppercase
-        text-white/[0.03]
-        pointer-events-none
-        select-none">
-
-            CREATE
-
-        </h2>
-
-
-
-
-
-        <div class="relative
-        max-w-5xl
-        mx-auto
-        px-8
-        text-center">
-
-            <div class="inline-flex
-            rounded-full
-            border
-            border-green-500/20
-            bg-green-500/10
-            px-6
-            py-3
-            tracking-[5px]
-            uppercase
-            text-xs
-            text-green-400">
-
-                My Philosophy
-
-            </div>
-
-
-
-
-
-            <h2 class="mt-10
-            font-black
-            leading-[0.95]
-            text-5xl
-            md:text-7xl">
-
-                I don't build
-
-                <span class="line-through text-gray-600">
-
-                    websites
-
-                </span>
-
-            </h2>
-
-
-
-
-
-            <h2 class="mt-6
-            font-black
-            leading-[0.95]
-            text-5xl
-            md:text-7xl">
-
-                I build
-
-                <span class="bg-gradient-to-r
-                from-green-400
-                via-cyan-400
-                to-blue-500
-                bg-clip-text
-                text-transparent">
-
-                    experiences.
-
-                </span>
-
-            </h2>
-
-
-
-
-
-            <p class="max-w-3xl
-            mx-auto
-            mt-12
-            text-gray-400
-            leading-10
-            text-lg">
-
-                Every interaction should feel effortless.
-
-                Every animation should have purpose.
-
-                Every pixel should earn its place.
-
-            </p>
-
-        </div>
-
-    </section>
-
-    <!-- journey -->
-    <!-- ================================================= -->
-    <!-- JOURNEY -->
-    <!-- ================================================= -->
-
-    <section id="journey" class="relative min-h-screen py-40 overflow-hidden">
-
-        <!-- Background -->
-
-        <div class="absolute inset-0
-    bg-[radial-gradient(circle_at_center,rgba(255,255,255,.03)_1px,transparent_1px)]
-    bg-[length:45px_45px]">
-        </div>
-
-
-
-
-
-        <div class="max-w-6xl
-    mx-auto
-    relative
-    px-6">
-
-            <!-- Heading -->
-
-            <div class="mb-32">
-
-                <p class="uppercase
-            tracking-[8px]
-            text-green-400">
-
-                    My Journey
-
-                </p>
-
-                <h2 class="text-6xl
-            md:text-8xl
-            font-black
-            mt-6">
-
-                    Every year
-
-                    <br>
-
-                    changed me.
-
-                </h2>
-
-            </div>
-
-
-
-
-
-            <!-- Timeline -->
-
-            <div class="relative">
-
-                <!-- Line -->
-
-                <div class="absolute
-            left-4
-            top-0
-            bottom-0
-            w-[2px]
-            bg-gradient-to-b
-            from-green-500
-            via-cyan-500
-            to-transparent">
-
-                </div>
-
-
-
-
-
-                <!-- ITEM -->
-
-                <div class="relative
-            pl-20
-            mb-24">
-
-                    <div class="absolute
-                left-0
-                top-2
-                w-8
-                h-8
-                rounded-full
-                bg-green-500
-                shadow-[0_0_40px_#22c55e]">
-
-                    </div>
-
-                    <h3 class="text-5xl
-                font-black">
-
-                        2018
-
-                    </h3>
-
-                    <h4 class="mt-3
-                text-2xl">
-
-                        Started Engineering
-
-                    </h4>
-
-                    <p class="mt-4
-                text-gray-400
-                max-w-xl
-                leading-9">
-
-                        Electronics & Communication Engineering.
-
-                        This was where my problem-solving journey began.
-
-                    </p>
-
-                </div>
-
-
-
-
-
-                <!-- ITEM -->
-
-                <div class="relative
-            pl-20
-            mb-24">
-
-                    <div class="absolute
-                left-0
-                top-2
-                w-8
-                h-8
-                rounded-full
-                bg-cyan-500
-                shadow-[0_0_40px_#06b6d4]">
-
-                    </div>
-
-                    <h3 class="text-5xl
-                font-black">
-
-                        2024
-
-                    </h3>
-
-                    <h4 class="mt-3
-                text-2xl">
-
-                        Entered Full Stack Development
-
-                    </h4>
-
-                    <p class="mt-4
-                text-gray-400
-                max-w-xl
-                leading-9">
-
-                        Learned MERN stack and started building
-                        production-ready applications.
-
-                    </p>
-
-                </div>
-
-
-
-
-
-                <!-- ITEM -->
-
-                <div class="relative
-            pl-20
-            mb-24">
-
-                    <div class="absolute
-                left-0
-                top-2
-                w-8
-                h-8
-                rounded-full
-                bg-purple-500
-                shadow-[0_0_40px_#a855f7]">
-
-                    </div>
-
-                    <h3 class="text-5xl
-                font-black">
-
-                        2025
-
-                    </h3>
-
-                    <h4 class="mt-3
-                text-2xl">
-
-                        Professional Experience
-
-                    </h4>
-
-                    <p class="mt-4
-                text-gray-400
-                max-w-xl
-                leading-9">
-
-                        Worked on enterprise dashboards,
-                        business websites,
-                        React applications
-                        and client projects.
-
-                    </p>
-
-                </div>
-
-
-
-
-
-                <!-- ITEM -->
-
-                <div class="relative
-            pl-20">
-
-                    <div class="absolute
-                left-0
-                top-2
-                w-8
-                h-8
-                rounded-full
-                bg-orange-500
-                shadow-[0_0_40px_#fb923c]">
-
-                    </div>
-
-                    <h3 class="text-5xl
-                font-black">
-
-                        NOW
-
-                    </h3>
-
-                    <h4 class="mt-3
-                text-2xl">
-
-                        Still Learning.
-
-                    </h4>
-
-                    <p class="mt-4
-                text-gray-400
-                max-w-xl
-                leading-9">
-
-                        Every project teaches something new.
-                        The journey has only begun.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- projects -->
-    <!-- ================================================= -->
-    <!-- SELECTED WORK -->
-    <!-- ================================================= -->
-
-    <section id="projects" class="relative py-40 overflow-hidden">
-
-        <!-- Background -->
-
-        <div class="absolute
-    inset-0
-    bg-gradient-to-b
-    from-transparent
-    via-white/[0.02]
-    to-transparent">
-        </div>
-
-        <div class="max-w-7xl
-    mx-auto
-    px-6">
-
-            <div class="flex
-        flex-col
-        lg:flex-row
-        lg:items-end
-        lg:justify-between
-        gap-10">
-
-                <div>
-
-                    <p class="uppercase
-                tracking-[8px]
-                text-green-400">
-
-                        Selected Work
-
-                    </p>
-
-                    <h2 class="mt-6
-                text-6xl
-                md:text-8xl
-                font-black">
-
-                        Built with
-
-                        <br>
-
-                        purpose.
-
-                    </h2>
-
-                </div>
-
-                <p class="max-w-md
-            text-gray-400
-            leading-8">
-
-                    Every project solved a real problem.
-                    Clean UI, scalable architecture and
-                    meaningful user experience.
-
-                </p>
-
-            </div>
-
-
-
-            <!-- PROJECT 01 -->
-
-            <div class="group
-        mt-24
-        rounded-[40px]
-        border
-        border-white/10
-        bg-white/[0.03]
-        overflow-hidden
-        transition-all
-        duration-500
-        hover:border-green-400/40">
-
-                <div class="grid
-            lg:grid-cols-2">
-
-                    <!-- LEFT -->
-
-                    <div class="p-10
-                md:p-16
-                flex
-                flex-col
-                justify-center">
-
-                        <span class="text-sm
-                    tracking-[6px]
-                    uppercase
-                    text-green-400">
-
-                            Featured Project
-
-                        </span>
-
-                        <h3 class="mt-6
-                    text-5xl
-                    font-black">
-
-                            Digital Classroom
-
-                        </h3>
-
-                        <p class="mt-8
-                    text-gray-400
-                    leading-9">
-
-                            Enterprise classroom ecosystem
-                            for schools featuring student,
-                            teacher and administration modules
-                            with scalable architecture.
-
-                        </p>
-
-                        <div class="flex
-                    flex-wrap
-                    gap-3
-                    mt-10">
-
-                            <span class="px-4 py-2 rounded-full bg-white/5">React</span>
-                            <span class="px-4 py-2 rounded-full bg-white/5">Node</span>
-                            <span class="px-4 py-2 rounded-full bg-white/5">MongoDB</span>
-                            <span class="px-4 py-2 rounded-full bg-white/5">Android</span>
-
-                        </div>
-
-                        <div class="mt-12
-                    flex
-                    gap-5">
-
-                            <a href="#" class="rounded-full
-                        bg-green-500
-                        px-7
-                        py-4
-                        font-semibold">
-
-                                Live Preview
-
-                            </a>
-
-                            <a href="#" class="rounded-full
-                        border
-                        border-white/20
-                        px-7
-                        py-4">
-
-                                Github
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                    <!-- RIGHT -->
-
-                    <div class="relative
-                min-h-[420px]
-                bg-gradient-to-br
-                from-green-500/10
-                via-cyan-500/10
-                to-blue-500/10
-                flex
-                items-center
-                justify-center">
-
-                        <!-- Floating Screen -->
-
-                        <div class="projectCard
-                    w-[80%]
-                    aspect-video
-                    rounded-[30px]
-                    border
-                    border-white/10
-                    bg-[#0b1225]
-                    shadow-[0_30px_80px_rgba(0,0,0,.45)]">
-
-                            <div class="h-full
-                        flex
-                        items-center
-                        justify-center
-                        text-white/30
-                        text-xl
-                        tracking-[4px]">
-
-                                PROJECT PREVIEW
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-
-
-            <!-- PROJECT 02 -->
-
-            <div class="group
-        mt-10
-        rounded-[40px]
-        border
-        border-white/10
-        bg-white/[0.03]
-        p-12
-        hover:border-cyan-400/40
-        duration-500">
-
-                <div class="flex
-            flex-col
-            lg:flex-row
-            lg:justify-between
-            gap-10">
-
-                    <div>
-
-                        <span class="uppercase
-                    tracking-[6px]
-                    text-cyan-400">
-
-                            Business Website
-
-                        </span>
-
-                        <h3 class="mt-5
-                    text-4xl
-                    font-black">
-
-                            Varahi Info Tech
-
-                        </h3>
-
-                    </div>
-
-                    <p class="max-w-xl
-                text-gray-400
-                leading-8">
-
-                        Premium corporate website focused on
-                        storytelling, motion and brand identity.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Bottom -->
-
-            <div class="mt-24
-        text-center">
-
-                <p class="text-gray-500
-            tracking-[5px]
-            uppercase">
-
-                    More projects coming soon
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-    <!-- techstack -->
-    <!-- ================================================= -->
-    <!-- TECH ECOSYSTEM -->
-    <!-- ================================================= -->
-
-    <section id="skills" class="relative min-h-screen flex items-center overflow-hidden">
-
-        <div class="max-w-7xl
-mx-auto
-w-full
-px-6">
-
-            <div class="text-center">
-
-                <p class="uppercase
-tracking-[8px]
-text-green-400">
-
-                    Tech Ecosystem
-
-                </p>
-
-                <h2 class="mt-6
-font-black
-text-6xl
-md:text-8xl">
-
-                    Powered by
-
-                    <br>
-
-                    Ideas.
-
-                </h2>
-
-            </div>
-
-
-
-
-
-            <div class="relative
-mt-28
-h-[700px]
-flex
-items-center
-justify-center">
-
-
-
-
-                <!-- CENTER -->
-
-                <div class="relative
-z-20
-w-44
-h-44
-rounded-full
-bg-gradient-to-r
-from-green-500
-to-cyan-500
-
-flex
-items-center
-justify-center
-
-text-5xl
-font-black
-
-shadow-[0_0_80px_rgba(34,197,94,.45)]">
-
-                    HN
-
-                </div>
-
-
-
-
-
-                <!-- ORBIT -->
-
-                <div class="orbit orbit1">
-
-                    <div class="skill">React</div>
-
-                </div>
-
-                <div class="orbit orbit2">
-
-                    <div class="skill">JavaScript</div>
-
-                </div>
-
-                <div class="orbit orbit3">
-
-                    <div class="skill">Node</div>
-
-                </div>
-
-                <div class="orbit orbit4">
-
-                    <div class="skill">MongoDB</div>
-
-                </div>
-
-                <div class="orbit orbit5">
-
-                    <div class="skill">Express</div>
-
-                </div>
-
-                <div class="orbit orbit6">
-
-                    <div class="skill">Python</div>
-
-                </div>
-
-                <div class="orbit orbit7">
-
-                    <div class="skill">Tailwind</div>
-
-                </div>
-
-                <div class="orbit orbit8">
-
-                    <div class="skill">Git</div>
-
-                </div>
-
-                <div class="orbit orbit9">
-
-                    <div class="skill">REST API</div>
-
-                </div>
-
-                <div class="orbit orbit10">
-
-                    <div class="skill">HTML/CSS</div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- cinematic -->
-    <!-- ================================================= -->
-    <!-- CINEMATIC TRANSITION -->
-    <!-- ================================================= -->
-
-    <section id="transition" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-
-        <!-- Glow -->
-
-        <div class="absolute
-    w-[900px]
-    h-[900px]
-    rounded-full
-    bg-green-500/5
-    blur-[180px]">
-        </div>
-
-        <!-- Noise Overlay -->
-
-        <div class="absolute
-    inset-0
-    opacity-[0.03]
-    bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]">
-        </div>
-
-
-
-
-
-        <div class="relative
-    text-center
-    px-6">
-
-            <p class="uppercase
-        tracking-[8px]
-        text-green-400
-        mb-10">
-
-                Pause
-
-            </p>
-
-            <h2 class="transitionTitle
-        font-black
-        leading-[0.9]
-        text-5xl
-        md:text-8xl
-        max-w-5xl">
-
-                Great products
-
-                <br>
-
-                don't start
-
-                <br>
-
-                with code.
-
-            </h2>
-
-            <p class="mt-14
-        text-gray-500
-        text-lg
-        tracking-[3px]">
-
-                They start with curiosity.
-
-            </p>
-
-        </div>
-
-    </section>
-
-    <!-- contact -->
-    <!-- ================================================= -->
-    <!-- CONTACT -->
-    <!-- ================================================= -->
-
-    <section id="contact" class="relative min-h-screen flex items-center overflow-hidden">
-
-        <!-- Background Glow -->
-
-        <div class="absolute
-    left-1/2
-    top-1/2
-    -translate-x-1/2
-    -translate-y-1/2
-
-    w-[900px]
-    h-[900px]
-
-    rounded-full
-
-    bg-cyan-500/5
-
-    blur-[180px]">
-        </div>
-
-
-
-
-
-        <div class="relative
-    max-w-7xl
-    mx-auto
-    px-6
-    w-full">
-
-            <div class="max-w-5xl">
-
-                <p class="uppercase
-            tracking-[8px]
-            text-green-400
-            mb-10">
-
-                    Contact
-
-                </p>
-
-
-
-
-
-                <h2 class="font-black
-            leading-[0.88]
-
-            text-[55px]
-            sm:text-[75px]
-            md:text-[100px]
-            xl:text-[130px]">
-
-                    Let's build
-
-                    <br>
-
-                    something
-
-                    <br>
-
-                    <span class="bg-gradient-to-r
-                from-green-400
-                via-cyan-400
-                to-blue-500
-
-                bg-clip-text
-
-                text-transparent">
-
-                        people remember.
-
-                    </span>
-
-                </h2>
-
-
-
-
-
-                <p class="mt-12
-
-            text-gray-400
-
-            text-lg
-
-            max-w-2xl
-
-            leading-9">
-
-                    Whether it's a startup,
-                    a product,
-                    or an ambitious idea—
-
-                    I'd love to help bring it to life.
-
-                </p>
-
-
-
-
-
-                <!-- BUTTON -->
-
-                <div class="mt-16">
-
-                    <a href="mailto:gthimna@gmail.com" class="contactButton
-
-                inline-flex
-
-                items-center
-
-                gap-4
-
-                rounded-full
-
-                bg-white
-
-                text-black
-
-                px-10
-
-                py-5
-
-                text-lg
-
-                font-semibold">
-
-                        Start a Conversation
-
-                        →
+                        Explore Services
 
                     </a>
 
@@ -1819,261 +140,1572 @@ shadow-[0_0_80px_rgba(34,197,94,.45)]">
 
             </div>
 
+            <!-- RIGHT -->
 
+            <div class="relative h-[650px] hidden lg:block">
 
+                <!-- Main Circle -->
 
+                <div class="absolute top-28 left-32 w-72 h-72 rounded-full bg-orange-100 blur-3xl opacity-60"></div>
 
-            <!-- LINKS -->
+                <!-- Card -->
 
-            <div class="mt-36
-        grid
-        md:grid-cols-2
-        gap-8">
+                <div class="floating absolute top-10 right-0 bg-white border rounded-3xl p-6 w-72 shadow-sm">
 
-                <a href="#" class="contactLink">
+                    <h3 class="font-semibold mb-2">
 
-                    GitHub
+                        Online Data Entry
 
-                </a>
+                    </h3>
 
-                <a href="#" class="contactLink">
+                    <p class="text-sm text-gray-500">
 
-                    LinkedIn
+                        High-volume accurate processing with enterprise workflows.
 
-                </a>
+                    </p>
 
-                <a href="mailto:gthimna@gmail.com" class="contactLink">
+                </div>
 
-                    Email
+                <div class="floating2 absolute bottom-16 left-0 bg-white border rounded-3xl p-6 w-72 shadow-sm">
 
-                </a>
+                    <h3 class="font-semibold mb-2">
 
-                <a href="https://himanshna.github.io/Resume/" class="contactLink">
+                        Medical Billing
 
-                    Resume
+                    </h3>
 
-                </a>
+                    <p class="text-sm text-gray-500">
+
+                        Secure, compliant and reliable billing services.
+
+                    </p>
+
+                </div>
+
+                <div class="floating3 absolute top-64 right-24 bg-[#18181B] rounded-3xl p-8 text-white">
+
+                    <p class="text-sm opacity-70">
+
+                        Enterprise Solutions
+
+                    </p>
+
+                    <h2 class="text-5xl mt-2">
+
+                        250+
+
+                    </h2>
+
+                    <p class="opacity-60 mt-2">
+
+                        Projects Delivered
+
+                    </p>
+
+                </div>
 
             </div>
 
         </div>
 
     </section>
-<!-- end credits -->
 
+    <!-- hero ends -->
 
-<!-- ================================================= -->
-<!-- END CREDITS -->
-<!-- ================================================= -->
 
-<footer
-id="footer"
-class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- trusted by -->
+    <section class="py-28 border-y border-zinc-200" id="trust">
 
-    <!-- Giant Background Name -->
+        <div class="max-w-7xl mx-auto px-6">
 
-    <h2
-    class="absolute
-    left-1/2
-    top-1/2
-    -translate-x-1/2
-    -translate-y-1/2
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
 
-    text-[28vw]
-    font-black
-    tracking-[-12px]
-    leading-none
+                <div>
 
-    text-white/[0.025]
+                    <p class="uppercase tracking-[0.3em] text-xs text-zinc-500 mb-4">
 
-    select-none
-    pointer-events-none">
+                        TRUSTED OPERATIONS
 
-        HN
+                    </p>
 
-    </h2>
+                    <h2 class="text-[clamp(2.2rem,5vw,4rem)] tracking-[-0.05em] leading-none max-w-2xl">
 
+                        Trusted by businesses that value precision.
 
+                    </h2>
 
+                </div>
 
+                <p class="max-w-md text-zinc-500 leading-7">
 
-    <!-- Floating Glow -->
+                    Delivering reliable business process outsourcing,
+                    enterprise technology solutions and operational
+                    excellence through every project.
 
-    <div
-    class="absolute
+                </p>
 
-    w-[800px]
-    h-[800px]
+            </div>
 
-    rounded-full
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-16 mt-24">
 
-    bg-gradient-to-r
+                <div>
 
-    from-green-500/5
+                    <h3 class="counter text-6xl tracking-[-0.06em]">
 
-    via-cyan-500/5
+                        0
 
-    to-blue-500/5
+                    </h3>
 
-    blur-[180px]">
+                    <p class="mt-4 text-zinc-500">
 
-    </div>
+                        Projects Delivered
 
+                    </p>
 
+                </div>
 
+                <div>
 
+                    <h3 class="counter text-6xl tracking-[-0.06em]">
 
-    <div
-    class="relative
-    z-10
-    text-center
-    px-6">
+                        0
 
-        <p
-        class="uppercase
-        tracking-[8px]
-        text-green-400">
+                    </h3>
 
-            End of Story
+                    <p class="mt-4 text-zinc-500">
 
-        </p>
+                        Client Accuracy
 
+                    </p>
 
+                </div>
 
+                <div>
 
+                    <h3 class="counter text-6xl tracking-[-0.06em]">
 
-        <h2
-        class="mt-8
+                        0
 
-        text-5xl
-        md:text-7xl
+                    </h3>
 
-        font-black
+                    <p class="mt-4 text-zinc-500">
 
-        leading-tight">
+                        Support Availability
 
-            Thanks for
+                    </p>
 
-            <br>
+                </div>
 
-            stopping by.
+                <div>
 
-        </h2>
+                    <h3 class="counter text-6xl tracking-[-0.06em]">
 
+                        0
 
+                    </h3>
 
+                    <p class="mt-4 text-zinc-500">
 
+                        Business Solutions
 
-        <p
-        class="mt-10
+                    </p>
 
-        max-w-xl
+                </div>
 
-        mx-auto
-
-        text-gray-500
-
-        leading-9">
-
-            Every project starts with
-            a conversation.
-
-            Maybe the next one
-            starts with ours.
-
-        </p>
-
-
-
-
-
-        <!-- EMAIL -->
-
-        <a
-
-        href="mailto:gthimna@gmail.com"
-
-        class="footerMail">
-
-            gthimna@gmail.com
-
-        </a>
-
-
-
-
-
-        <div
-        class="mt-20
-
-        flex
-
-        justify-center
-
-        gap-8
-
-        text-gray-500">
-
-            <a href="#">GitHub</a>
-
-            <a href="#">LinkedIn</a>
-
-            <a href="#">Instagram</a>
+            </div>
 
         </div>
 
+    </section>
+
+    <!-- services -->
+    <section class="py-36" id="services">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="mb-24">
+
+                <p class="uppercase tracking-[0.3em] text-xs text-zinc-500 mb-5">
+
+                    WHAT WE DO
+
+                </p>
+
+                <h2 class="text-[clamp(3rem,7vw,5.5rem)] tracking-[-0.06em] leading-none max-w-4xl">
+
+                    Solutions built for modern businesses.
+
+                </h2>
+
+            </div>
+
+            <!-- ROW -->
+
+            <div class="service group">
+
+                <div class="grid lg:grid-cols-[140px_1fr_280px] gap-12 items-center py-16 border-t border-zinc-200">
+
+                    <div>
+
+                        <h3 class="text-7xl tracking-[-0.07em] text-zinc-300 group-hover:text-[#FC5F2B] duration-500">
+
+                            01
+
+                        </h3>
+
+                    </div>
+
+                    <div>
+
+                        <h2 class="text-5xl tracking-[-0.05em]">
+
+                            Business Process Outsourcing
+
+                        </h2>
+
+                        <p class="mt-8 text-zinc-500 leading-8 max-w-2xl">
+
+                            Accurate, scalable and secure outsourcing
+                            solutions helping organizations improve
+                            efficiency while reducing operational costs.
+
+                        </p>
+
+                        <div class="flex flex-wrap gap-3 mt-8">
+
+                            <span>Online US Data Entry Forms</span>
+
+                            <span>Offline Domestic Data Entry Forms</span>
+
+                            <span>KYC Support</span>
+
+                            <span>Online & Offline Medical Billing</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex justify-end">
+
+                        <div class="arrow">
+
+                            →
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="service group">
+
+                <div class="grid lg:grid-cols-[140px_1fr_280px] gap-12 items-center py-16 border-t border-zinc-200">
+
+                    <div>
+
+                        <h3 class="text-7xl tracking-[-0.07em] text-zinc-300 group-hover:text-[#FC5F2B] duration-500">
+
+                            02
+
+                        </h3>
+
+                    </div>
+
+                    <div>
+
+                        <h2 class="text-5xl tracking-[-0.05em]">
+
+                            Technology Solutions
+
+                        </h2>
+
+                        <p class="mt-8 text-zinc-500 leading-8 max-w-2xl">
+
+                            Modern software solutions designed to improve productivity, automate workflows, and
+                            accelerate digital transformation across organizations.
+
+                        </p>
+
+                        <div class="flex flex-wrap gap-3 mt-8">
+
+                            <span>Web Applications</span>
+
+                            <span>Mobile Applications</span>
+
+                            <span>Enterprise Software</span>
+
+                            <span>API Integrations</span>
+
+                            <span>Full Stack Development</span>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex justify-end">
+
+                        <div class="arrow">
+
+                            →
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="service group">
+
+                <div class="grid lg:grid-cols-[140px_1fr_280px] gap-12 items-center py-16 border-t border-zinc-200">
+
+                    <div>
+
+                        <h3 class="text-7xl tracking-[-0.07em] text-zinc-300 group-hover:text-[#FC5F2B] duration-500">
+
+                            03
+
+                        </h3>
+
+                    </div>
+
+                    <div>
+
+                        <h2 class="text-5xl tracking-[-0.05em]">
+
+                            Management Systems
+
+                        </h2>
+
+                        <p class="mt-8 text-zinc-500 leading-8 max-w-2xl">
+
+                            Intelligent management platforms that simplify administration, improve collaboration, and
+                            centralize business operations through secure digital systems.
+
+                        </p>
+
+                        <div class="flex flex-wrap gap-3 mt-8">
+
+                            <span>School Management</span>
+
+                            <span>College ERP</span>
+
+                            <span>Hospital Management</span>
+
+                            <span>Business ERP</span>
+
+                            <span>CRMs</span>
+
+                            <span>ERPs</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex justify-end">
+
+                        <div class="arrow">
+
+                            →
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="service group">
+
+                <div
+                    class="grid lg:grid-cols-[140px_1fr_280px] gap-12 items-center py-16 border-t border-zinc-200 border-b">
+
+                    <div>
+
+                        <h3 class="text-7xl tracking-[-0.07em] text-zinc-300 group-hover:text-[#FC5F2B] duration-500">
+
+                            04
+
+                        </h3>
+
+                    </div>
+
+                    <div>
+
+                        <h2 class="text-5xl tracking-[-0.05em]">
+
+                            Business Support Services
+
+                        </h2>
+
+                        <p class="mt-8 text-zinc-500 leading-8 max-w-2xl">
+
+                            Reliable operational support services that help organizations maintain efficiency, reduce
+                            downtime, and focus on their core business objectives.
+
+                        </p>
+
+                        <div class="flex flex-wrap gap-3 mt-8">
+
+                            <span>Technical Support</span>
+
+                            <span>Chat support</span>
+
+                            <span>Email marketing</span>
+
+                            <span>SEO</span>
+
+                            <span>BPO Services</span>
+
+                            <span>SEO</span>
+
+                            <span>Voice & Non voice Customer support </span>
+
+                            <span>Automation</span>
+
+                            <span>Cloud Services</span>
+
+                            <span>Maintenance</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex justify-end">
+
+                        <div class="arrow">
+
+                            →
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- services ends -->
 
 
 
 
-        <div
-        class="mt-24
 
-        text-xs
+        </div>
 
-        tracking-[4px]
+    </section>
 
-        uppercase
 
-        text-gray-600">
+    <!-- about -->
+    <section class="py-40 bg-[#FAFAFA]" id="about">
 
-            Designed & Developed by Himanshu Namdeo
+        <div class="max-w-7xl mx-auto px-6">
 
-            <br><br>
+            <!-- Heading -->
 
-            © 2026
+            <div class="max-w-5xl">
+
+                <p class="uppercase tracking-[0.3em] text-xs text-zinc-500 mb-6">
+
+                    ABOUT VARAHI INFO TECH
+
+                </p>
+
+                <h2 class="text-[clamp(3rem,7vw,5.8rem)] leading-[0.95] tracking-[-0.06em]">
+
+                    We believe technology should simplify business,
+                    not complicate it.
+
+                </h2>
+
+            </div>
+
+            <!-- Content -->
+
+            <div class="grid lg:grid-cols-3 gap-20 mt-28">
+
+                <!-- Left -->
+
+                <div>
+
+                    <h3 class="text-2xl mb-6">
+
+                        Our Story
+
+                    </h3>
+
+                    <p class="leading-8 text-zinc-600">
+
+                        Varahi Info Tech provides business process outsourcing
+                        and enterprise technology solutions that help
+                        organizations improve productivity, accuracy,
+                        and operational efficiency.
+
+                    </p>
+
+                </div>
+
+                <!-- Center -->
+
+                <div class="flex flex-col items-center justify-center border-x border-zinc-200 py-10">
+
+                    <span class="uppercase tracking-[0.3em] text-xs text-zinc-500">
+
+                        Since
+
+                    </span>
+
+                    <h2 class="text-8xl tracking-[-0.07em] mt-4">
+
+                        2018
+
+                    </h2>
+
+                </div>
+
+                <!-- Right -->
+
+                <div>
+
+                    <h3 class="text-2xl mb-6">
+
+                        What We Deliver
+
+                    </h3>
+
+                    <p class="leading-8 text-zinc-600">
+
+                        From online and offline data entry to enterprise
+                        software, management systems, automation,
+                        web applications and digital solutions,
+                        we build systems that grow with your business.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- about ends -->
+
+
+    <!-- why choose us  -->
+    <section class="py-40" id="why-us">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="mb-20">
+
+                <p class="uppercase tracking-[0.3em] text-xs text-zinc-500 mb-5">
+
+                    WHY CHOOSE US
+
+                </p>
+
+                <h2 class="text-[clamp(3rem,6vw,5rem)] tracking-[-0.06em] leading-none max-w-4xl">
+
+                    Built for reliability.
+                    Designed for growth.
+
+                </h2>
+
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-6 auto-rows-[260px]">
+
+                <!-- CARD 1 -->
+
+                <div
+                    class="group rounded-[32px] border border-zinc-200 bg-[#FAFAFA] p-10 lg:col-span-2 hover:-translate-y-2 transition duration-500">
+
+                    <p class="text-sm uppercase tracking-[0.25em] text-zinc-500">
+
+                        Accuracy
+
+                    </p>
+
+                    <h3 class="text-7xl mt-8 tracking-[-0.06em]">
+
+                        99%
+
+                    </h3>
+
+                    <p class="mt-8 max-w-md text-zinc-600 leading-7">
+
+                        Precision-driven workflows ensuring consistent and dependable business operations.
+
+                    </p>
+
+                </div>
+
+                <!-- CARD 2 -->
+
+                <div
+                    class="group rounded-[32px] bg-[#18181B] text-white p-10 hover:-translate-y-2 transition duration-500">
+
+                    <p class="text-sm uppercase tracking-[0.25em] text-white/50">
+
+                        Support
+
+                    </p>
+
+                    <h3 class="text-5xl mt-8">
+
+                        24/7
+
+                    </h3>
+
+                    <p class="mt-6 text-white/70 leading-7">
+
+                        Always available whenever your business needs us.
+
+                    </p>
+
+                </div>
+
+                <!-- CARD 3 -->
+
+                <div
+                    class="group rounded-[32px] border border-zinc-200 p-10 hover:-translate-y-2 transition duration-500">
+
+                    <h3 class="text-3xl">
+
+                        Enterprise Solutions
+
+                    </h3>
+
+                    <p class="mt-6 text-zinc-600 leading-7">
+
+                        Scalable software built around real business processes.
+
+                    </p>
+
+                </div>
+
+                <!-- CARD 4 -->
+
+                <div
+                    class="group rounded-[32px] bg-[#FC5F2B] text-white p-10 lg:col-span-2 hover:-translate-y-2 transition duration-500">
+
+                    <h3 class="text-5xl tracking-[-0.05em]">
+
+                        Business First
+
+                    </h3>
+
+                    <p class="mt-8 max-w-lg leading-8 text-white/80">
+
+                        Every solution is created to solve operational problems before adding unnecessary complexity.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- why choose us end -->
+
+
+<!-- industries we serve -->
+ <!-- ================= INDUSTRIES ================= -->
+
+<section id="industries" class="py-36">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Heading -->
+
+        <div class="mb-20">
+
+            <p class="uppercase tracking-[0.3em] text-xs text-zinc-500 mb-5">
+
+                INDUSTRIES WE SERVE
+
+            </p>
+
+            <h2 class="text-[clamp(3rem,6vw,5rem)] leading-[0.95] tracking-[-0.06em] max-w-4xl">
+
+                Built for businesses across every industry.
+
+            </h2>
+
+        </div>
+
+        <!-- Industries -->
+
+        <div class="border-t border-zinc-200">
+
+            <!-- Item -->
+
+            <a href="#contact"
+                class="group flex flex-col lg:flex-row lg:items-center justify-between gap-6 py-10 border-b border-zinc-200 hover:bg-zinc-50 hover:px-6 transition-all duration-500">
+
+                <div class="flex items-center gap-8">
+
+                    <span
+                        class="text-5xl lg:text-7xl tracking-[-0.06em] text-zinc-300 group-hover:text-[#FC5F2B] transition-all duration-500">
+
+                        01
+
+                    </span>
+
+                    <div>
+
+                        <h3
+                            class="text-2xl lg:text-4xl tracking-tight group-hover:-translate-x-1 transition duration-500">
+
+                            Healthcare
+
+                        </h3>
+
+                        <p class="text-zinc-500 mt-2">
+
+                            Medical Billing • Healthcare Management
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="w-14 h-14 rounded-full border border-zinc-300 flex items-center justify-center group-hover:bg-[#FC5F2B] group-hover:border-[#FC5F2B] group-hover:text-white group-hover:rotate-[-45deg] transition-all duration-500">
+
+                    →
+
+                </div>
+
+            </a>
+
+            <!-- Item -->
+
+            <a href="#contact"
+                class="group flex flex-col lg:flex-row lg:items-center justify-between gap-6 py-10 border-b border-zinc-200 hover:bg-zinc-50 hover:px-6 transition-all duration-500">
+
+                <div class="flex items-center gap-8">
+
+                    <span
+                        class="text-5xl lg:text-7xl tracking-[-0.06em] text-zinc-300 group-hover:text-[#FC5F2B] transition-all duration-500">
+
+                        02
+
+                    </span>
+
+                    <div>
+
+                        <h3 class="text-2xl lg:text-4xl tracking-tight">
+
+                            Education
+
+                        </h3>
+
+                        <p class="text-zinc-500 mt-2">
+
+                            Management Systems • ERP Solutions
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="w-14 h-14 rounded-full border border-zinc-300 flex items-center justify-center group-hover:bg-[#FC5F2B] group-hover:border-[#FC5F2B] group-hover:text-white group-hover:rotate-[-45deg] transition-all duration-500">
+
+                    →
+
+                </div>
+
+            </a>
+
+            <!-- Item -->
+
+            <a href="#contact"
+                class="group flex flex-col lg:flex-row lg:items-center justify-between gap-6 py-10 border-b border-zinc-200 hover:bg-zinc-50 hover:px-6 transition-all duration-500">
+
+                <div class="flex items-center gap-8">
+
+                    <span
+                        class="text-5xl lg:text-7xl tracking-[-0.06em] text-zinc-300 group-hover:text-[#FC5F2B] transition-all duration-500">
+
+                        03
+
+                    </span>
+
+                    <div>
+
+                        <h3 class="text-2xl lg:text-4xl tracking-tight">
+
+                            Transportation
+
+                        </h3>
+
+                        <p class="text-zinc-500 mt-2">
+
+                            Fleet • Logistics • Transport Management
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="w-14 h-14 rounded-full border border-zinc-300 flex items-center justify-center group-hover:bg-[#FC5F2B] group-hover:border-[#FC5F2B] group-hover:text-white group-hover:rotate-[-45deg] transition-all duration-500">
+
+                    →
+
+                </div>
+
+            </a>
+
+            <!-- Item -->
+
+            <a href="#contact"
+                class="group flex flex-col lg:flex-row lg:items-center justify-between gap-6 py-10 border-b border-zinc-200 hover:bg-zinc-50 hover:px-6 transition-all duration-500">
+
+                <div class="flex items-center gap-8">
+
+                    <span
+                        class="text-5xl lg:text-7xl tracking-[-0.06em] text-zinc-300 group-hover:text-[#FC5F2B] transition-all duration-500">
+
+                        04
+
+                    </span>
+
+                    <div>
+
+                        <h3 class="text-2xl lg:text-4xl tracking-tight">
+
+                            Retail & Business
+
+                        </h3>
+
+                        <p class="text-zinc-500 mt-2">
+
+                            ERP • Inventory • Business Automation
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="w-14 h-14 rounded-full border border-zinc-300 flex items-center justify-center group-hover:bg-[#FC5F2B] group-hover:border-[#FC5F2B] group-hover:text-white group-hover:rotate-[-45deg] transition-all duration-500">
+
+                    →
+
+                </div>
+
+            </a>
+
+            <!-- Item -->
+
+            <a href="#contact"
+                class="group flex flex-col lg:flex-row lg:items-center justify-between gap-6 py-10 border-b border-zinc-200 hover:bg-zinc-50 hover:px-6 transition-all duration-500">
+
+                <div class="flex items-center gap-8">
+
+                    <span
+                        class="text-5xl lg:text-7xl tracking-[-0.06em] text-zinc-300 group-hover:text-[#FC5F2B] transition-all duration-500">
+
+                        05
+
+                    </span>
+
+                    <div>
+
+                        <h3 class="text-2xl lg:text-4xl tracking-tight">
+
+                            Enterprise
+
+                        </h3>
+
+                        <p class="text-zinc-500 mt-2">
+
+                            Custom Software • Digital Transformation
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="w-14 h-14 rounded-full border border-zinc-300 flex items-center justify-center group-hover:bg-[#FC5F2B] group-hover:border-[#FC5F2B] group-hover:text-white group-hover:rotate-[-45deg] transition-all duration-500">
+
+                    →
+
+                </div>
+
+            </a>
 
         </div>
 
     </div>
 
+</section>
+<!-- industries we serve end -->
+
+<!-- tech stack -->
+ <!-- ================= TECHNOLOGY STACK ================= -->
+
+<section id="technology" class="py-36 bg-[#FAFAFA]">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Heading -->
+
+        <div class="mb-20">
+
+            <p class="uppercase tracking-[0.3em] text-xs text-zinc-500 mb-5">
+
+                TECHNOLOGIES WE WORK WITH
+
+            </p>
+
+            <h2 class="text-[clamp(3rem,6vw,5rem)] leading-[0.95] tracking-[-0.06em] max-w-4xl">
+
+                Modern technologies powering reliable business solutions.
+
+            </h2>
+
+        </div>
+
+        <!-- Grid -->
+
+        <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-6">
+
+            <!-- Frontend -->
+
+            <div class="group border border-zinc-200 rounded-[28px] bg-white p-8 hover:-translate-y-2 hover:border-[#FC5F2B] transition-all duration-500">
+
+                <p class="uppercase text-xs tracking-[0.25em] text-zinc-500 mb-8">
+
+                    Frontend
+
+                </p>
+
+                <div class="space-y-4">
+
+                    <div class="text-2xl">HTML5</div>
+
+                    <div class="text-2xl">CSS3</div>
+
+                    <div class="text-2xl">JavaScript</div>
+
+                    <div class="text-2xl">React.js</div>
+
+                    <div class="text-2xl">Tailwind CSS</div>
+
+                </div>
+
+            </div>
+
+            <!-- Backend -->
+
+            <div class="group border border-zinc-200 rounded-[28px] bg-white p-8 hover:-translate-y-2 hover:border-[#FC5F2B] transition-all duration-500">
+
+                <p class="uppercase text-xs tracking-[0.25em] text-zinc-500 mb-8">
+
+                    Backend
+
+                </p>
+
+                <div class="space-y-4">
+
+                    <div class="text-2xl">Node.js</div>
+
+                    <div class="text-2xl">Express.js</div>
+
+                    <div class="text-2xl">REST APIs</div>
+
+                    <div class="text-2xl">JWT</div>
+
+                    <div class="text-2xl">Authentication</div>
+
+                </div>
+
+            </div>
+
+            <!-- Database -->
+
+            <div class="group border border-zinc-200 rounded-[28px] bg-white p-8 hover:-translate-y-2 hover:border-[#FC5F2B] transition-all duration-500">
+
+                <p class="uppercase text-xs tracking-[0.25em] text-zinc-500 mb-8">
+
+                    Database
+
+                </p>
+
+                <div class="space-y-4">
+
+                    <div class="text-2xl">MongoDB</div>
+
+                    <div class="text-2xl">MySQL</div>
+
+                    <div class="text-2xl">SQL</div>
+
+                    <div class="text-2xl">Firebase</div>
+
+                </div>
+
+            </div>
+
+            <!-- Enterprise -->
+
+            <div class="group border border-zinc-200 rounded-[28px] bg-white p-8 hover:-translate-y-2 hover:border-[#FC5F2B] transition-all duration-500">
+
+                <p class="uppercase text-xs tracking-[0.25em] text-zinc-500 mb-8">
+
+                    Enterprise
+
+                </p>
+
+                <div class="space-y-4">
+
+                    <div class="text-2xl">Android</div>
+
+                    <div class="text-2xl">Kotlin</div>
+
+                    <div class="text-2xl">Automation</div>
+
+                    <div class="text-2xl">Management Systems</div>
+
+                    <div class="text-2xl">Cloud Solutions</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- tech stack end -->
+
+    <!-- our process -->
+    <section class="py-40 border-y border-zinc-200" id="process">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="text-center max-w-3xl mx-auto">
+
+                <p class="uppercase tracking-[0.3em] text-xs text-zinc-500 mb-6">
+
+                    OUR PROCESS
+
+                </p>
+
+                <h2 class="text-[clamp(3rem,6vw,5rem)] tracking-[-0.06em] leading-none">
+
+                    From idea to execution.
+
+                </h2>
+
+            </div>
+
+            <div class="relative mt-28">
+
+                <!-- Line -->
+
+                <div class="absolute top-5 left-0 w-full h-[2px] bg-zinc-200"></div>
+
+                <div class="grid lg:grid-cols-4 gap-16 relative">
+
+                    <!-- 1 -->
+
+                    <div>
+
+                        <div class="w-10 h-10 rounded-full bg-[#FC5F2B] border-8 border-white relative z-10"></div>
+
+                        <h3 class="text-2xl mt-8">
+
+                            Discover
+
+                        </h3>
+
+                        <p class="mt-4 text-zinc-600 leading-7">
+
+                            We understand your goals, workflows and business challenges before suggesting solutions.
+
+                        </p>
+
+                    </div>
+
+                    <!-- 2 -->
+
+                    <div>
+
+                        <div class="w-10 h-10 rounded-full bg-[#18181B] border-8 border-white relative z-10"></div>
+
+                        <h3 class="text-2xl mt-8">
+
+                            Strategy
+
+                        </h3>
+
+                        <p class="mt-4 text-zinc-600 leading-7">
+
+                            Our team plans the right combination of technology and business processes.
+
+                        </p>
+
+                    </div>
+
+                    <!-- 3 -->
+
+                    <div>
+
+                        <div class="w-10 h-10 rounded-full bg-[#18181B] border-8 border-white relative z-10"></div>
+
+                        <h3 class="text-2xl mt-8">
+
+                            Build
+
+                        </h3>
+
+                        <p class="mt-4 text-zinc-600 leading-7">
+
+                            We develop, test and optimize solutions using modern technologies.
+
+                        </p>
+
+                    </div>
+
+                    <!-- 4 -->
+
+                    <div>
+
+                        <div class="w-10 h-10 rounded-full bg-[#18181B] border-8 border-white relative z-10"></div>
+
+                        <h3 class="text-2xl mt-8">
+
+                            Support
+
+                        </h3>
+
+                        <p class="mt-4 text-zinc-600 leading-7">
+
+                            Continuous maintenance and long-term support to help your business grow.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- our prcess end -->
+
+
+    <!-- mission -->
+    <section class="py-40 bg-[#18181B] text-white" id="mission">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="grid lg:grid-cols-2 gap-24">
+
+                <!-- Mission -->
+
+                <div class="border-b lg:border-b-0 lg:border-r border-white/10 pb-16 lg:pb-0 lg:pr-16">
+
+                    <p class="uppercase tracking-[0.3em] text-xs text-white/50 mb-8">
+
+                        OUR MISSION
+
+                    </p>
+
+                    <h2 class="text-[clamp(2.8rem,5vw,4.8rem)] leading-[0.95] tracking-[-0.05em]">
+
+                        Deliver technology that genuinely improves the way businesses operate.
+
+                    </h2>
+
+                    <p class="mt-10 text-white/70 leading-8 max-w-xl">
+
+                        Through dependable BPO services, enterprise software, management systems and digital
+                        transformation, we help organizations simplify operations, improve productivity and achieve
+                        sustainable growth.
+
+                    </p>
+
+                </div>
+
+                <!-- Vision -->
+
+                <div class="lg:pl-16">
+
+                    <p class="uppercase tracking-[0.3em] text-xs text-white/50 mb-8">
+
+                        OUR VISION
+
+                    </p>
+
+                    <h2 class="text-[clamp(2.8rem,5vw,4.8rem)] leading-[0.95] tracking-[-0.05em]">
+
+                        Become a trusted technology partner for businesses across every industry.
+
+                    </h2>
+
+                    <p class="mt-10 text-white/70 leading-8 max-w-xl">
+
+                        We envision a future where organizations of every size can leverage modern technology and
+                        intelligent business processes without unnecessary complexity.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- mission end -->
+
+    <!-- cta -->
+    <section class="py-44">
+
+        <div class="max-w-5xl mx-auto px-6 text-center">
+
+            <p class="uppercase tracking-[0.3em] text-xs text-zinc-500 mb-8">
+
+                START A CONVERSATION
+
+            </p>
+
+            <h2 class="text-[clamp(3.2rem,8vw,6.5rem)] leading-[0.9] tracking-[-0.06em]">
+
+                Ready to transform
+                your business?
+
+            </h2>
+
+            <p class="mt-10 max-w-2xl mx-auto text-zinc-600 leading-8">
+
+                Whether you need business process outsourcing,
+                enterprise software or digital transformation,
+                our team is ready to help you build reliable,
+                scalable solutions.
+
+            </p>
+
+            <a href="#contact"
+                class="inline-flex items-center gap-3 mt-14 bg-[#FC5F2B] text-white rounded-full px-10 py-5 text-lg hover:scale-105 transition duration-300">
+
+                Let's Build Together →
+
+            </a>
+
+        </div>
+
+    </section>
+    <!-- cta end -->
+
+
+    <!-- contact -->
+    <section id="contact" class="py-36 border-t border-zinc-200" id="contact">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="grid lg:grid-cols-2 gap-20">
+
+                <!-- Left -->
+
+                <div>
+
+                    <p class="uppercase tracking-[0.3em] text-xs text-zinc-500 mb-6">
+
+                        CONTACT
+
+                    </p>
+
+                    <h2 class="text-5xl tracking-[-0.05em] leading-tight">
+
+                        Let's discuss your next project.
+
+                    </h2>
+
+                    <div class="mt-12 space-y-8">
+
+                        <div>
+                            <p class="text-zinc-500">Email</p>
+                            <h3 class="text-2xl">info@varahiinfotech.com</h3>
+                        </div>
+
+                        <div>
+                            <p class="text-zinc-500">Phone</p>
+                            <h3 class="text-2xl">+91 9080130918</h3>
+                        </div>
+
+                        <div>
+                            <p class="text-zinc-500">Location</p>
+                            <h3 class="text-2xl">India</h3>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Right -->
+
+                <form class="space-y-6">
+
+                    <input type="text" placeholder="Your Name"
+                        class="w-full border border-zinc-300 rounded-2xl px-6 py-5 outline-none focus:border-[#FC5F2B]">
+
+                    <input type="email" placeholder="Email Address"
+                        class="w-full border border-zinc-300 rounded-2xl px-6 py-5 outline-none focus:border-[#FC5F2B]">
+
+                    <input type="text" placeholder="Company"
+                        class="w-full border border-zinc-300 rounded-2xl px-6 py-5 outline-none focus:border-[#FC5F2B]">
+
+                    <textarea rows="6" placeholder="Tell us about your project..."
+                        class="w-full border border-zinc-300 rounded-2xl px-6 py-5 outline-none focus:border-[#FC5F2B] resize-none"></textarea>
+
+                    <button class="bg-[#18181B] text-white rounded-full px-8 py-4 hover:bg-[#FC5F2B] transition">
+
+                        Send Message →
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- conntact end -->
+
+
+    <!-- footer -->
+
+    <footer class="bg-[#18181B] text-white pt-20 pb-10">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="grid lg:grid-cols-4 gap-14">
+
+                <!-- Company -->
+
+                <div>
+
+                    <div class="flex items-center gap-3">
+
+                        <img src="assets/images/1logo.png" alt="Varahi InfoTech Logo"
+                            class="h-12 w-auto object-contain rounded-full">
+
+                        <div>
+
+                            <h2 class="text-2xl tracking-tight">
+
+                                Varahi InfoTech
+
+                            </h2>
+
+                            <p class="text-sm text-white/60">
+
+                                BPO & Technology
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <p class="mt-8 leading-7 text-white/65">
+
+                        Delivering reliable Business Process Outsourcing,
+                        Enterprise Software, Management Systems,
+                        Medical Billing and Digital Transformation
+                        solutions for modern businesses.
+
+                    </p>
+
+                </div>
+
+                <!-- Services -->
+
+                <div>
+
+                    <h3 class="text-lg mb-6">
+
+                        Services
+
+                    </h3>
+
+                    <ul class="space-y-3 text-white/60">
+
+                        <li><a href="#services" class="hover:text-[#FC5F2B]">Online Data Entry</a></li>
+
+                        <li><a href="#services" class="hover:text-[#FC5F2B]">Offline Data Entry</a></li>
+
+                        <li><a href="#services" class="hover:text-[#FC5F2B]">Medical Billing</a></li>
+
+                        <li><a href="#services" class="hover:text-[#FC5F2B]">Management Systems</a></li>
+
+                        <li><a href="#services" class="hover:text-[#FC5F2B]">Technology Solutions</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Quick Links -->
+
+                <div>
+
+                    <h3 class="text-lg mb-6">
+
+                        Quick Links
+
+                    </h3>
+
+                    <ul class="space-y-3 text-white/60">
+
+                        <li><a href="#about" class="hover:text-[#FC5F2B]">About Us</a></li>
+
+                        <li><a href="#why-us" class="hover:text-[#FC5F2B]">Why Choose Us</a></li>
+
+                        <li><a href="#process" class="hover:text-[#FC5F2B]">Our Process</a></li>
+
+                        <li><a href="#contact" class="hover:text-[#FC5F2B]">Contact</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Contact -->
+
+                <div>
+
+                    <h3 class="text-lg mb-6">
+
+                        Contact
+
+                    </h3>
+
+                    <div class="space-y-5 text-white/65">
+
+                        <div>
+
+                            <p class="text-white/40 text-sm mb-1">
+
+                                Address
+
+                            </p>
+
+                            <p>
+
+                                50 E.B Road,<br>
+                                Opposite to Mathuram Ground,<br>
+                                1st Floor, Tharanallur,<br>
+                                Tiruchirappalli,<br>
+                                Tamil Nadu – 620008
+
+                            </p>
+
+                        </div>
+
+                        <div>
+
+                            <p class="text-white/40 text-sm mb-1">
+
+                                Phone
+
+                            </p>
+
+                            <a href="tel:+919080130918" class="hover:text-[#FC5F2B]">
+
+                                +91 90801 30918
+
+                            </a>
+
+                        </div>
+
+                        <div>
+
+                            <p class="text-white/40 text-sm mb-1">
+
+                                Email
+
+                            </p>
+
+                            <a href="mailto:varahi.infotechnology@gmail.com" class="hover:text-[#FC5F2B] break-all">
+
+                                varahi.infotechnology@gmail.com
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div
+                class="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+
+                <p class="text-white/50 text-sm">
+
+                    © 2026 Varahi InfoTech. All Rights Reserved.
+
+                </p>
+
+                <p class="text-white/40 text-sm text-center md:text-right">
+
+                    Designed & Developed by
+
+                    <a href="https://himanshna.github.io/Journey/" target="_blank" rel="noopener noreferrer"
+                        class="text-[#FC5F2B] hover:text-white transition duration-300 font-medium">
+
+                        HimAnshNA
+
+                    </a>
+
+                    for Varahi InfoTech
+
+                </p>
+<p style="display: none;">This is one of my favourite projects. i closely worked on it every since VIT Started.</p>
+
+
+                
+            </div>
+
+        </div>
+
+    </footer>
+    <!-- fooer end -->
 
 
 
 
-    <!-- Alive Dot -->
-
-    <div
-    class="aliveDot"></div>
-
-</footer>
 
 
+    <script src="js/main.js"></script>
 
-
-    <script>
-
-        const glow = document.querySelector("#mouseGlow");
-
-        window.addEventListener("mousemove", (e) => {
-
-            glow.style.left = e.clientX + "px";
-
-            glow.style.top = e.clientY + "px";
-
-        });
-
-    </script>
 </body>
 
 </html>
